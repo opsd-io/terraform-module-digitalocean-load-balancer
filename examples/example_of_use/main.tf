@@ -17,11 +17,13 @@ module "digitalocean_loadbalancer" {
   droplet_ids = [digitalocean_droplet.main.id]
 
 
-  forwarding_rule {
-    entry_port     = 80
-    entry_protocol = "http"
+  forwarding_rule = [
+    {
+      entry_port     = 80
+      entry_protocol = "http"
 
-    target_port     = 80
-    target_protocol = "http"
-  }
+      target_port     = 80
+      target_protocol = "http"
+    }
+  ]
 }
