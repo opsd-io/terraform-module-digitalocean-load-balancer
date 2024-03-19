@@ -14,7 +14,7 @@ module "digitalocean_loadbalancer" {
   source      = "github.com/opsd-io/terraform-module-digitalocean-load-balancer?ref=load_balancer_module"
   name        = "loadbalancer-1"
   region      = "nyc1"
-  droplet_ids = [module.digitalocean_droplet.main.id]
+  droplet_ids = [module.digitalocean_droplet.id]
 
 
   forwarding_rule = [
