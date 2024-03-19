@@ -3,7 +3,7 @@ provider "digitalocean" {
 }
 
 module "terraform_module_digitalocean_vpc" {
-  source      = "github.com/opsd-io/terraform-module-digitalocean-vpc?ref=MB_vpc"
+  source      = "github.com/opsd-io/terraform-module-digitalocean-vpc"
   vpc_name    = "your-vpc"
   region      = "nyc1"
   description = "VPC added by terraform module"
