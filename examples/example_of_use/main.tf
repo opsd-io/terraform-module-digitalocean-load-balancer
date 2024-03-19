@@ -3,7 +3,7 @@ provider "digitalocean" {
 }
 
 module "terraform_module_digitalocean_vpc" {
-  source      = "github.com/opsd-io/terraform-module-digitalocean?ref=main"
+  source      = "github.com/opsd-io/terraform-module-digitalocean-vpc"
   vpc_name    = "your-vpc"
   region      = "nyc1"
   ip_range    = "192.168.0.0/24"
