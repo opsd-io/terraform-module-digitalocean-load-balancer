@@ -1,3 +1,7 @@
+provider "digitalocean" {
+  token = var.do_token
+}
+
 module "digitalocean_droplet" {
   source = "github.com/opsd-io/terraform-module-digitalocean-droplet?ref=MB_droplet_creation"
   image  = "ubuntu-20-04-x64"
