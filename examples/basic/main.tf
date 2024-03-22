@@ -20,7 +20,7 @@ module "digitalocean_droplet" {
 }
 
 module "digitalocean_loadbalancer" {
-  source      = "github.com/opsd-io/terraform-module-digitalocean-load-balancer?ref=load_balancer_module"
+  source      = "github.com/opsd-io/terraform-module-digitalocean-load-balancer?ref=1-create-load-balancer-terraform-module"
   name        = "loadbalancer-1"
   region      = "nyc1"
   droplet_ids = [module.digitalocean_droplet.id]
