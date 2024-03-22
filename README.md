@@ -31,11 +31,14 @@ module "module_name" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.1 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.7 |
+| <a name="requirement_digitalocean"></a> [digitalocean](#requirement\_digitalocean) | >= 2.34.1 |
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_digitalocean"></a> [digitalocean](#provider\_digitalocean) | >= 2.34.1 |
 
 ## Modules
 
@@ -43,15 +46,31 @@ No modules.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [digitalocean_loadbalancer.main](https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs/resources/loadbalancer) | resource |
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_droplet_ids"></a> [droplet\_ids](#input\_droplet\_ids) | A list of the IDs of each droplet to be attached to the Load Balancer. | `list(string)` | `[]` | no |
+| <a name="input_droplet_tag"></a> [droplet\_tag](#input\_droplet\_tag) | The name of a Droplet tag corresponding to Droplets to be assigned to the Load Balancer. | `string` | `null` | no |
+| <a name="input_firewall"></a> [firewall](#input\_firewall) | List of objects that represent the configuration of each healthcheck. | `list(any)` | `[]` | no |
+| <a name="input_forwarding_rule"></a> [forwarding\_rule](#input\_forwarding\_rule) | List of objects for forwarding\_rule. | `list(any)` | `[]` | no |
+| <a name="input_name"></a> [name](#input\_name) | The Load Balancer name | `string` | n/a | yes |
+| <a name="input_region"></a> [region](#input\_region) | The region to start in | `string` | n/a | yes |
+| <a name="input_size"></a> [size](#input\_size) | The size of the Load Balancer. It must be either lb-small, lb-medium, or lb-large. Defaults to lb-small. Only one of size or size\_unit may be provided. | `string` | `"lb-small"` | no |
+| <a name="input_size_unit"></a> [size\_unit](#input\_size\_unit) | The size of the Load Balancer. It must be in the range (1, 100). Defaults to 1. Only one of size or size\_unit may be provided. | `number` | `1` | no |
+| <a name="input_vpc_uuid"></a> [vpc\_uuid](#input\_vpc\_uuid) | The ID of the VPC where the load balancer will be located. | `string` | `""` | no |
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_id"></a> [id](#output\_id) | The ID of the Load Balancer. |
+| <a name="output_ip"></a> [ip](#output\_ip) | The ip of the Load Balancer. |
+| <a name="output_urn"></a> [urn](#output\_urn) | The urn for the Load Balancer. |
 <!-- END_TF_DOCS -->
 
 ## Examples of usage
