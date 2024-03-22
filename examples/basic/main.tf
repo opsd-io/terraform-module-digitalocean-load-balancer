@@ -17,7 +17,7 @@ module "digitalocean_droplet" {
   name     = "web-1"
   region   = "nyc1"
   size     = "s-1vcpu-1gb"
-  vpc_uuid = [module.terraform_module_digitalocean_vpc.id]
+  vpc_uuid = module.terraform_module_digitalocean_vpc.id
 }
 
 module "digitalocean_loadbalancer" {
@@ -25,7 +25,7 @@ module "digitalocean_loadbalancer" {
   name        = "loadbalancer-1"
   region      = "nyc1"
   droplet_ids = [module.digitalocean_droplet.id]
-  vpc_uuid    = [module.terraform_module_digitalocean_vpc.id]
+  vpc_uuid    = module.terraform_module_digitalocean_vpc.id
 
   forwarding_rule = [
     {
