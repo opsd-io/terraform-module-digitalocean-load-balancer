@@ -11,7 +11,7 @@ module "terraform_module_digitalocean_vpc" {
 
 
 module "digitalocean_droplet" {
-  source   = "github.com/opsd-io/terraform-module-digitalocean-droplet?ref=MB_droplet_creation"
+  source   = "github.com/opsd-io/terraform-module-digitalocean-droplet?ref=1-create-droplet-terraform-module"
   image    = "ubuntu-20-04-x64"
   name     = "web-1"
   region   = "nyc1"
